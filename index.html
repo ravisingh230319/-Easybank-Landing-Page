@@ -13,7 +13,24 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
   <title>Easybank landing page</title>
+<script>
+  const openButton = document.querySelector('#open');
+  const menu = document.querySelector('.menu');
 
+openButton.addEventListener('click', () => {
+  if (openButton.classList.contains('closed')) {
+    openButton.src = './images/icon-close.svg';
+    openButton.classList.remove('closed');
+    openButton.classList.add('opened');
+    menu.style.display = 'flex';
+  } else if (openButton.classList.contains('opened')) {
+    openButton.src = './images/icon-hamburger.svg';
+    openButton.classList.remove('opened');
+    openButton.classList.add('closed');
+    menu.style.display = 'none';
+  }
+});
+</script>
 </head>
 
 <body>
@@ -28,11 +45,15 @@
         <li><a class="header-link">Careers</a></li>
       </ul>
     </nav>
-    <button class="button">
+    <button class="button" id="btn1">
       Request Invite
     </button>
+    <label class="menu-btn">
+      <img src="./images/icon-hamburger.svg">
+    </label>
   </header>
 
+  <div class="bgImage">
   <section class="section1">
     <article class="section1Child">
       <span class="bigHeading">Next generation</span>
@@ -56,7 +77,9 @@
 
     <div class="section2Child">
       <div>
-        <img src="images/icon-online.svg" class="logo">
+        <div class="logoTransactions">
+          <img src="images/icon-online.svg" class="logo">
+        </div>
         <div class="boxContent">
           <p>Online Banking</p>
           <p class="content">Our modern web and mobile applications allow you to keep track of your finances
@@ -67,7 +90,9 @@
 
       </div>
       <div>
-        <img src="images/icon-budgeting.svg" class="logo">
+        <div class="logoTransactions">
+          <img src="images/icon-budgeting.svg" class="logo">
+        </div>
         <div class="boxContent">
           <p>Simple Budgeting</p>
           <p class="content">See exactly where your money goes each month. Receive notifications when you’re
@@ -77,7 +102,9 @@
 
       </div>
       <div>
-        <img src="images/icon-onboarding.svg" class="logo">
+        <div class="logoTransactions">
+          <img src="images/icon-onboarding.svg" class="logo">
+        </div>
         <div class="boxContent">
           <p>Fast Onboarding</p>
           <p class="content">
@@ -88,7 +115,9 @@
 
       </div>
       <div>
-        <img src="images/icon-api.svg" class="logo">
+        <div class="logoTransactions">
+          <img src="images/icon-api.svg" class="logo">
+        </div>
         <div class="boxContent">
           <p>Open API</p>
           <p class="content">
@@ -100,6 +129,7 @@
       </div>
     </div>
   </section>
+</div>
 
   <article class="latestArticles">
     <p class="secondBoxHeading">Latest Articles</p>
